@@ -1,0 +1,18 @@
+Feature('Learner')
+
+Scenario('Navigate through Serlo', ({ I }) => {
+  I.amOnPage('/')
+  I.see('Hier auf Serlo')
+  I.click('Über Serlo')
+  I.see('Serlo.org bietet')
+  I.see('Partner und Förderer')
+  I.click('Mathematik')
+  I.see('Im Mathematik-Bereich')
+  I.click('Alle Themen')
+  I.see('Mathe')
+  I.see('Bereiche')
+  I.click('Zahlen und Größen')
+  I.click('Grundrechenarten')
+  I.see('Plus, minus, mal und geteilt')
+  //pause()
+})
