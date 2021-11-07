@@ -42,5 +42,36 @@ Scenario('Navigate through Serlo', ({ I }) => {
   I.usePlaywrightTo('go back', async ({ page }) => {
     await page.goBack()
   })
-  I.click('7 Fakten zum Klimawandel')
+  I.see('7 Fakten zum Klimawandel')
+})
+
+Scenario('Interact with multiple choice', ({ I }) => {
+  I.amOnPage('/131435')
+  I.see('Welche beiden Aufgaben')
+  I.click("Stimmt's")
+  I.see('Leider nicht richtig')
+  I.click('20% von 400€')
+  I.click("Stimmt's")
+  I.see('Leider nicht richtig')
+  I.click('20% von 400€') // deselect
+  I.dontSee('Leider nicht richtig')
+  I.click('30% von 200€')
+  I.click('15% von 400€')
+  I.click("Stimmt's")
+  I.see('Richtig')
+})
+
+Scenario('Interact with single choice', ({ I }) => {
+  I.amOnPage('/3383')
+  I.see('Klicke auf eine der Optionen')
+  I.click('15')
+  I.click("Stimmt's?")
+  I.see('Diese Antwort passt leider nicht')
+  I.click('120')
+  I.dontSee('Diese Antwort passt leider nicht')
+  I.click("Stimmt's?")
+  I.see('Diese Antwort passt leider nicht')
+  I.click('495')
+  I.click("Stimmt's?")
+  I.see('Super!')
 })
