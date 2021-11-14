@@ -45,6 +45,22 @@ Scenario('Navigate through Serlo', ({ I }) => {
   I.see('7 Fakten zum Klimawandel')
 })
 
+Scenario('Search', ({ I }) => {
+  I.amOnPage('/serlo')
+  I.click('.gsc-input')
+  I.click('Zustimmen')
+  I.wait(1)
+  I.fillField('Suche', 'qu')
+  I.see('quadratische')
+  I.pressKey('Enter')
+  I.seeElement('#gcs-results')
+  I.see('Alle')
+  I.see('Artikel')
+  I.click('Queue und Stack implementieren')
+  I.seeInCurrentUrl('dev')
+  I.see('Viele objektorientierte')
+})
+
 Scenario('Interact with multiple choice', ({ I }) => {
   I.amOnPage('/131435')
   I.see('Welche beiden Aufgaben')
