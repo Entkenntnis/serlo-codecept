@@ -4,7 +4,7 @@ Scenario('Navigate through Serlo', ({ I }) => {
   I.amOnPage('/')
   I.see('Hier auf Serlo')
   I.click('Über Serlo')
-  I.see('Serlo.org bietet')
+  I.see('So funktioniert Serlo')
   I.see('Partner und Förderer')
   I.click('Mathematik')
   I.see('Im Mathematik-Bereich')
